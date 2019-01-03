@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.ALL;
 USE work.constants.ALL;
 
-ENTITY filter_bank_choser IS
+ENTITY filter_bank_chooser IS
 	PORT (
 		SW_A : IN STD_LOGIC;
 		SW_B : IN STD_LOGIC;
@@ -18,9 +18,9 @@ ENTITY filter_bank_choser IS
 		M9 : OUT signed(MSIZE DOWNTO 0);
 		SUM : OUT signed(MSIZE DOWNTO 0)--;
 	);
-END filter_bank_choser;
+END filter_bank_chooser;
 
-ARCHITECTURE fbc_imp OF filter_bank_choser IS
+ARCHITECTURE fb_imp OF filter_bank_chooser IS
 BEGIN
 	DRIVER : PROCESS (SW_A, SW_B)
 		VARIABLE DIN : std_logic_vector(1 DOWNTO 0);
@@ -81,4 +81,4 @@ BEGIN
 				M9 <= to_signed(1, M9'length);
 		END CASE;
 	END PROCESS;
-END fbc_imp;
+END fb_imp;
