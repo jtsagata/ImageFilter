@@ -9,6 +9,11 @@ xilinxsim.ini
 *.exe
 *.wdb
 
+# Ignore ipcore files
+ipcore_dir/tmp/
+ipcore_dir/coregen.log
+
+
 # Created by https://www.gitignore.io/api/xilinxise,sublimetext
 # Edit at https://www.gitignore.io/?templates=xilinxise,sublimetext
 
