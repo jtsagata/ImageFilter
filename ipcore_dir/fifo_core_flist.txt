@@ -1,0 +1,16 @@
+# Output products list for <fifo_core>
+_xmsgs/pn_parser.xmsgs
+fifo_core/doc/fifo_generator_v9_3_readme.txt
+fifo_core/doc/fifo_generator_v9_3_vinfo.html
+fifo_core/doc/pg057-fifo-generator.pdf
+fifo_core/fifo_generator_v9_3_readme.txt
+fifo_core.asy
+fifo_core.gise
+fifo_core.ngc
+fifo_core.sym
+fifo_core.vhd
+fifo_core.vho
+fifo_core.xco
+fifo_core.xise
+fifo_core_flist.txt
+fifo_core_xmdf.tcl
