@@ -1,3 +1,13 @@
+# Ignore Instatiation templates
+*.vhi
+
+# Ignore ISim files
+fuse*
+isim/
+isim*
+xilinxsim.ini
+*.exe
+*.wdb
 
 # Created by https://www.gitignore.io/api/xilinxise,sublimetext
 # Edit at https://www.gitignore.io/?templates=xilinxise,sublimetext
