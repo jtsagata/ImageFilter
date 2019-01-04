@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/talos/Nextcloud/C-Semester/02.FPGA/Projects/FinalProject/filter_bank_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="constants" />
+            <top_module name="filter_bank_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/filter_bank_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/sum" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sum[12:0]</obj_property>
+      <obj_property name="ObjectShortName">sum[12:0]</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffff00</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p5" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p5[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p5[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p3[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p4" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p4[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p6" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p6[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p6[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p7" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p7[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p7[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p8" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p8[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p8[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/p9" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p9[7:0]</obj_property>
+      <obj_property name="ObjectShortName">p9[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/sw_a" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sw_a</obj_property>
+      <obj_property name="ObjectShortName">sw_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/sw_b" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sw_b</obj_property>
+      <obj_property name="ObjectShortName">sw_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/ready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_bank_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>
