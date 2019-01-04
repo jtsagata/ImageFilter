@@ -9,6 +9,10 @@ xilinxsim.ini
 *.exe
 *.wdb
 
+# Ignore README toc files
+README.md.orig.*
+README.md.toc.*
+
 # Ignore ipcore files
 ipcore_dir/tmp/
 
