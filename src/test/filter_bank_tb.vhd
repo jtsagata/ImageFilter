@@ -26,7 +26,7 @@ ARCHITECTURE behavior OF filter_bank_tb IS
          Enable : IN  std_logic;
          CLK : IN  std_logic;
 		 
-         sum : OUT signed (MRESULT DOWNTO 0);
+         sum : OUT std_logic_vector(UBIT DOWNTO 0);
          Ready : OUT  std_logic
         );
     END COMPONENT;
@@ -48,7 +48,7 @@ ARCHITECTURE behavior OF filter_bank_tb IS
    signal CLK : std_logic := '0';
 
  	--Outputs
-   signal sum : signed (MRESULT DOWNTO 0);
+   signal sum : std_logic_vector(UBIT DOWNTO 0);
    signal Ready : std_logic;
 
    -- Clock period definitions
@@ -119,22 +119,26 @@ BEGIN
 	  -- We feed 2 pixels more and a reset
 	  wait for CLK_period*(WAIT_MULT_ADDER -3);
 	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(1, SUM'length) REPORT "In Correct Sum step 1" SEVERITY error;	
+	  ASSERT SUM = std_logic_vector(to_unsigned(1, SUM'length)) 
+	  REPORT "In Correct Sum step 1" SEVERITY error;	
 
 	  -- Test 2nd pixel change
 	  wait until rising_edge(clk);
 	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(2, SUM'length) REPORT "In Correct Sum step 2" SEVERITY error;	
+	  ASSERT SUM = std_logic_vector(to_unsigned(2, SUM'length)) 
+	  REPORT "In Correct Sum step 2" SEVERITY error;	
 	
 	  -- Test 3nd pixel change
 	  wait until rising_edge(clk);
 	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(3, SUM'length) REPORT "In Correct Sum step 2" SEVERITY error;	
+	  ASSERT SUM = std_logic_vector(to_unsigned(3, SUM'length)) 
+	  REPORT "In Correct Sum step 2" SEVERITY error;	
 
 	  -- Test after reset input
 	  wait until rising_edge(clk);
 	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(0, SUM'length) REPORT "In Correct Sum step 2" SEVERITY error;	
+	  ASSERT SUM = std_logic_vector(to_unsigned(0, SUM'length)) 
+	  REPORT "In Correct Sum step 2" SEVERITY error;	
 
 
       wait;

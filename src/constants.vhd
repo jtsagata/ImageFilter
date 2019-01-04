@@ -10,7 +10,7 @@ PACKAGE constants IS
 	
 	-- WAIT values
 	CONSTANT WAIT_ADDER : NATURAL := 5;  -- cycles
-	CONSTANT WAIT_MULT_ADDER : NATURAL := 6;  -- cycles
+	CONSTANT WAIT_MULT_ADDER : NATURAL := 7;  -- cycles
 END constants;
 
 PACKAGE BODY constants IS

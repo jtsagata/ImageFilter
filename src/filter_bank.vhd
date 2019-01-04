@@ -19,7 +19,7 @@ ENTITY filter_bank IS
 		Enable : IN STD_LOGIC;
 		CLK : IN STD_LOGIC;
 		
-		sum : OUT signed (MRESULT DOWNTO 0);
+		sum :   OUT std_logic_vector(UBIT DOWNTO 0);
 		Ready : OUT STD_LOGIC --
 	);
 END filter_bank;
@@ -72,6 +72,18 @@ COMPONENT mult_adder IS
 		Ready : OUT std_logic --
 	);
 END COMPONENT;
+
+COMPONENT zipper is
+    Port (
+		Enable : IN STD_LOGIC;
+		CLK :    IN STD_LOGIC;
+		
+		INPUT  : IN  signed(MRESULT DOWNTO 0);
+		OUTPUT : OUT std_logic_vector(UBIT DOWNTO 0) --;
+	
+    );
+END COMPONENT;
+
  
 signal M1_OUT: signed (MSIZE DOWNTO 0); 
 signal M2_OUT: signed (MSIZE DOWNTO 0); 
@@ -82,6 +94,7 @@ signal M6_OUT: signed (MSIZE DOWNTO 0);
 signal M7_OUT: signed (MSIZE DOWNTO 0); 
 signal M8_OUT: signed (MSIZE DOWNTO 0); 
 signal M9_OUT: signed (MSIZE DOWNTO 0); 
+signal M_OUT:  signed (MRESULT DOWNTO 0);
  
 BEGIN
 
@@ -122,8 +135,15 @@ BEGIN
 		M9 => M9_OUT, 		
 		Enable => Enable,
 		CLK => CLK,
-		sum => sum,
+		sum => M_OUT,
 		Ready => Ready
+	);
+
+	Inst_zipper: zipper PORT MAP(
+		Enable => Enable,
+		CLK => CLK,
+		INPUT => M_OUT,
+		OUTPUT => SUM
 	);
 
 END fb_impl;
