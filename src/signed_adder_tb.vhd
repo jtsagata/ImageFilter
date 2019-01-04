@@ -111,17 +111,17 @@ BEGIN
 	  wait for CLK_period/4;
 	  ASSERT SUM = to_signed(1, P1'length) REPORT "In Correct Sum" SEVERITY error;
 	  
+	  -- The result flow is constant
 	  wait until rising_edge(clk);
-	  wait for CLK_period/4;
+	  -- Need some extra time
+	  wait for CLK_period/4; 
 	  ASSERT SUM = to_signed(2, P1'length) REPORT "In Correct Sum" SEVERITY error;
 
 	  wait until rising_edge(clk);
 	  wait for CLK_period/4;
 	  ASSERT SUM = to_signed(1, P1'length) REPORT "In Correct Sum" SEVERITY error;
-
-	  -- wait until rising_edge(clk);
-
-      wait;
+      
+	  wait;
    end process;
 
 END;
