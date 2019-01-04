@@ -15,6 +15,10 @@
       </db_ref>
    </db_ref_list>
    <WVObjectSize size="12" />
+   <wave_markers>
+      <marker time="145000000" label="" />
+      <marker time="355000000" label="" />
+   </wave_markers>
    <wvobject fp_name="/fifo_buffer_3_tb/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -52,6 +56,12 @@
       <obj_property name="ObjectShortName">da[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/fifo_buffer_3_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#efeac0</obj_property>
+   </wvobject>
    <wvobject fp_name="/fifo_buffer_3_tb/ready" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">ready</obj_property>
       <obj_property name="ObjectShortName">ready</obj_property>
@@ -67,12 +77,6 @@
    <wvobject fp_name="/fifo_buffer_3_tb/clk_period" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">clk_period</obj_property>
       <obj_property name="ObjectShortName">clk_period</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="CustomSignalColor">#efeac0</obj_property>
-   </wvobject>
-   <wvobject fp_name="/fifo_buffer_3_tb/reset" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
       <obj_property name="CustomSignalColor">#efeac0</obj_property>
    </wvobject>
