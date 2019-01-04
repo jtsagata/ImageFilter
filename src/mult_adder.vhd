@@ -87,8 +87,8 @@ BEGIN
 		
 	PROCESS (Enable, CLK)
 	BEGIN
-		-- TODO: clock first
-		IF (Enable = '1') AND (CLK'EVENT AND CLK = '1') THEN
+		IF (CLK'EVENT AND CLK = '1') THEN
+		IF (Enable = '1') THEN
 			IN1 <= P1_S * M1;
 			IN2 <= P2_S * M2;
 			IN3 <= P3_S * M3;
@@ -98,6 +98,7 @@ BEGIN
 			IN7 <= P7_S * M7;
 			IN8 <= P8_S * M8;
 			IN9 <= P9_S * M9;
+		END IF;
 		END IF;
 	END PROCESS;
 

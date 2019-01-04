@@ -39,7 +39,7 @@ COMPONENT filter_bank_choser
 		M7 : OUT signed(MSIZE DOWNTO 0);
 		M8 : OUT signed(MSIZE DOWNTO 0);
 		M9 : OUT signed(MSIZE DOWNTO 0);
-		MSUM : OUT signed(MSIZE DOWNTO 0)
+		DIVIDER : OUT signed(MSIZE DOWNTO 0)
 	);
 END COMPONENT;
  
@@ -98,7 +98,7 @@ BEGIN
 		M7 => M7_OUT, 
 		M8 => M8_OUT, 
 		M9 => M9_OUT, 
-		MSUM => OPEN
+		DIVIDER => OPEN
 	); 
 
 	Inst_multiplier: mult_adder PORT MAP(

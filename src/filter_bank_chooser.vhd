@@ -56,7 +56,7 @@ BEGIN
 				--
 				M7 <= to_signed(-1, M7'length);
 				M8 <= to_signed(0,  M8'length);
-				M9 <= to_signed(+1, M9'length);
+				M9 <= to_signed(-1, M9'length);
 				DIVIDER <= to_signed(1, M9'length);
 				
 			WHEN "10" => 
