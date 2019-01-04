@@ -1,11 +1,11 @@
 ## Directory stucture
 
-- src
+- src  
   Contains the VHDL sources
 
-- src/test
+- src/test  
   Contains the VHDL test benches
 
-- src/sims
+- src/sims  
   Contains the VHDL test benches results
 
