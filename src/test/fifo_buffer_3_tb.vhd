@@ -52,9 +52,6 @@ ARCHITECTURE behavior OF fifo_buffer_3_tb IS
 	
 	-- COUNT SIGNAL
 	signal COUNT : unsigned(UBIT downto 0) := (0=>'1', others => '0');
-
---	-- RESET SIGNAL
---	signal reset_signal : std_logic;
 	
 BEGIN
 	-- Process
@@ -96,9 +93,9 @@ BEGIN
    -- start_circuit process
    start_circuit: process
    begin        
-        -- configure and enable
-        -- hold reset state for 100 ns.
-        RESET <= '1';
+    -- configure and enable
+    -- hold reset state for 100 ns.
+    RESET <= '1';
 		wait for CLK_period*10;      
         RESET <= '0';
 		ENABLE <= '1';
@@ -116,7 +113,7 @@ BEGIN
 		wait for CLK_period;
 		RESET <= '0';
 		
-        -- indefinitely suspend process
+    -- indefinitely suspend process
 		wait;  
    end process;
    
@@ -137,7 +134,7 @@ BEGIN
         write(OLine, ht);write(OLine, string'("RDY"));
         writeline(debug_file, OLine);
         
-        -- indefinitely suspend process
+    -- indefinitely suspend process
 		wait;  
    end process;
    

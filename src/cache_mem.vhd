@@ -26,9 +26,11 @@ end cache_mem;
 architecture cache_mem_impl of cache_mem is
 
 signal connect1,connect2,connect3 : std_logic_vector(7 downto 0);
-signal fifo_enable1,fifo_enable2,fifo_enable3: std_logic;
+signal fifo_enable1,fifo_enable2: std_logic;
 signal fifo_read_enable1,fifo_read_enable2,fifo_read_enable3: std_logic;
 signal fifo_out1,fifo_out2 : std_logic_vector(7 downto 0);
+
+signal READY_SIGNAL: std_logic;
 
 COMPONENT fifo_buffer_3
 PORT(
@@ -60,6 +62,8 @@ COMPONENT fifo_core
 END COMPONENT;
 
 begin
+
+	READY <= READY_SIGNAL;
 
     buffer_1: fifo_buffer_3 PORT MAP(
         CLK => CLK,
@@ -121,5 +125,6 @@ begin
         DB => P2,
         DC => P1,
         READY => open
+        --READY => READY_SIGNAL
     );
 end cache_mem_impl;
