@@ -16,7 +16,7 @@ end zipper;
 
 architecture z_impl of zipper is
 begin
-	PROCESS (Enable, CLK)
+	PROCESS (Enable, CLK, INPUT)
 		variable INPUT_VECTOR :std_logic_vector(MRESULT DOWNTO 0);
 	BEGIN
 		INPUT_VECTOR := std_logic_vector(INPUT);

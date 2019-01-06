@@ -5,7 +5,8 @@ USE work.constants.ALL;
 
 
 entity cache_mem is
-    Port ( CLK : in  STD_LOGIC;
+    Port ( 
+        CLK : in  STD_LOGIC;
         ENABLE : in  STD_LOGIC;
         RESET : IN std_logic;
         DIN : in  STD_LOGIC_VECTOR (UBIT downto 0);
