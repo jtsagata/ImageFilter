@@ -62,6 +62,15 @@
   <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/cache_mem.png">
 </p>
 
+### Zipper
+Module zipper takes the filter output and trim it down to the range 0...255. 
+
+TODO: Use the coefficient sum from filter chooser to do division and implement gaussian filter 
+
+<p align="center">
+  <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/zipper.png">
+</p>
+
 
 ## Directory stucture
 
