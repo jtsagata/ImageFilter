@@ -39,8 +39,7 @@ PORT (
   P6 : OUT std_logic_vector(UBIT DOWNTO 0);
   P7 : OUT std_logic_vector(UBIT DOWNTO 0);
   P8 : OUT std_logic_vector(UBIT DOWNTO 0);
-  P9 : OUT std_logic_vector(UBIT DOWNTO 0);
-  READY : OUT std_logic
+  P9 : OUT std_logic_vector(UBIT DOWNTO 0)--;
   );
 END COMPONENT;
 
@@ -95,9 +94,8 @@ BEGIN
     P6 => P6, 
     P7 => P7, 
     P8 => P8, 
-    P9 => P9, 
-    READY => READY
-    );
+    P9 => P9
+  );
 
 -- save data in file : path is relative to Modelsim-project directory
 file_open(debug_file, "src/sims/cache_mem.txt", write_mode);
@@ -125,7 +123,7 @@ BEGIN
     CLOCK_EN <= '1';
 
     -- Test RESET circuit
-    wait for CLK_period*17;
+    wait for CLK_period*30;
     RESET <= '1';
     wait for CLK_period;
     RESET <= '0';
@@ -200,7 +198,6 @@ BEGIN
     write(OLine, ht); write(OLine, STRING'("P7"));
     write(OLine, ht); write(OLine, STRING'("P8"));
     write(OLine, ht); write(OLine, STRING'("P9"));
-    write(OLine, ht); write(OLine, STRING'("READY"));
     writeline(debug_file, OLine);
 
     -- indefinitely suspend process
@@ -225,8 +222,6 @@ BEGIN
     write(OLine, to_integer(unsigned(P7)));write(OLine, ht); 
     write(OLine, to_integer(unsigned(P8)));write(OLine, ht); 
     write(OLine, to_integer(unsigned(P9)));write(OLine, ht); 
-    write(OLine, string'(" | ")); write(OLine, ht); 
-    write(OLine, READY);
     -- And now write the line to file
     writeline(debug_file, OLine);
   END IF;
