@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/talos/Nextcloud/C-Semester/02.FPGA/Projects/FinalProject/filter_top_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="constants" />
+            <top_module name="filter_top_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/filter_top_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/counter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">counter[8:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/f_start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">f_start</obj_property>
+      <obj_property name="ObjectShortName">f_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/f_end" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">f_end</obj_property>
+      <obj_property name="ObjectShortName">f_end</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/clock_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_en</obj_property>
+      <obj_property name="ObjectShortName">clock_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/sw_a" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sw_a</obj_property>
+      <obj_property name="ObjectShortName">sw_a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/sw_b" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sw_b</obj_property>
+      <obj_property name="ObjectShortName">sw_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/image_width" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">image_width</obj_property>
+      <obj_property name="ObjectShortName">image_width</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/image_height" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">image_height</obj_property>
+      <obj_property name="ObjectShortName">image_height</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/image_last_value" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">image_last_value</obj_property>
+      <obj_property name="ObjectShortName">image_last_value</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/i_width" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i_width[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_width[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/i_heigh" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">i_heigh[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_heigh[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/filter_top_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>

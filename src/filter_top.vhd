@@ -5,23 +5,20 @@ USE work.constants.ALL;
 
 entity filter_top is
     Port ( 
-        CLK :    IN  STD_LOGIC;
-        ENABLE : IN  STD_LOGIC;
-        RESET :  IN std_logic;
-        
-        I_WIDTH : IN STD_LOGIC_VECTOR (UBIT downto 0);
-        I_HEIGH : IN STD_LOGIC_VECTOR (UBIT downto 0);
-
-
+		CLK :    IN  STD_LOGIC;
+		ENABLE : IN  STD_LOGIC;
+		RESET :  IN std_logic;
+		I_WIDTH : IN STD_LOGIC_VECTOR (UBIT downto 0);
+		I_HEIGH : IN STD_LOGIC_VECTOR (UBIT downto 0);
 		SW_A : IN STD_LOGIC;
 		SW_B : IN STD_LOGIC;
-
-        DIN  : IN  STD_LOGIC_VECTOR (UBIT downto 0);
-        
-        DOUT : OUT  STD_LOGIC_VECTOR (UBIT downto 0);
-        F_START : OUT  STD_LOGIC;
-        F_END : OUT  STD_LOGIC--;
-
+		DIN  : IN  STD_LOGIC_VECTOR (UBIT downto 0);
+		DOUT : OUT  STD_LOGIC_VECTOR (UBIT downto 0);
+		-- FOR DEBUG
+		COUNTER : OUT std_logic_vector(PRG_FULL_CONST DOWNTO 0);
+		--
+		F_START : OUT  STD_LOGIC;
+		F_END : OUT  STD_LOGIC--;
     );
 end filter_top;
 
@@ -90,9 +87,12 @@ architecture filter_top_i of filter_top is
 		I_WIDTH : IN STD_LOGIC_VECTOR (UBIT downto 0);
         I_HEIGH : IN STD_LOGIC_VECTOR (UBIT downto 0);
         FILTER_IN  : IN  STD_LOGIC_VECTOR (UBIT downto 0);
-	    THRESHSIZE :std_logic_vector(PRG_FULL_CONST DOWNTO 0);
+	    THRESHSIZE : OUT std_logic_vector(PRG_FULL_CONST DOWNTO 0);
 		DOUT :    OUT  STD_LOGIC_VECTOR (UBIT downto 0);
-        F_START : OUT  STD_LOGIC;
+        -- FOR DEBUG
+		COUNTER : OUT std_logic_vector(PRG_FULL_CONST DOWNTO 0);
+		--
+		F_START : OUT  STD_LOGIC;
         F_END :   OUT  STD_LOGIC--;
 	);
 	end COMPONENT;
@@ -145,6 +145,9 @@ begin
 		FILTER_IN => FILTER_OUT,
 		THRESHSIZE => THRESHSIZE,
 		DOUT => DOUT ,
+        -- FOR DEBUG
+		COUNTER  => COUNTER,
+		--
 		F_START => F_START,
 		F_END => F_END
 	);
