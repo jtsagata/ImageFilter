@@ -23,6 +23,7 @@ ARCHITECTURE behavior OF filter_bank_tb IS
          P9 : IN  std_logic_vector(7 downto 0);
          SW_A : IN  std_logic;
          SW_B : IN  std_logic;
+		 SW_C : IN  std_logic;
          Enable : IN  std_logic;
          CLK : IN  std_logic;
          
@@ -43,6 +44,7 @@ ARCHITECTURE behavior OF filter_bank_tb IS
    signal P9 : std_logic_vector(7 downto 0) := (others => '0');
    signal SW_A : std_logic := '0';
    signal SW_B : std_logic := '0';
+   signal SW_C : std_logic := '0';
    signal Enable : std_logic := '0';
    signal CLK : std_logic := '0';
 
@@ -68,6 +70,7 @@ BEGIN
           P9 => P9,
           SW_A => SW_A,
           SW_B => SW_B,
+		  SW_C => SW_C,
           Enable => Enable,
           CLK => CLK,
           sum => sum
@@ -92,6 +95,7 @@ BEGIN
       -- Select identity filter
       SW_A <= '0';
       SW_B <= '0';
+	  SW_C <= '0';
       wait for 100 ns;
       
       -- Start simulation
