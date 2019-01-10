@@ -8,6 +8,7 @@
          * [Efficient adder](#efficient-adder)
          * [fifo_buffer_3](#fifo_buffer_3)
          * [Cache memory](#cache-memory)
+         * [Controller](#controller)
       * [Directory stucture](#directory-stucture)
 
 <!-- Added by: talos, at: 2019-01-06T02:56+01:00 -->
@@ -95,6 +96,9 @@ This is a complex module that do a lot of calculations
 
 - src  
   Contains the VHDL sources
+
+- wcfg  
+  Contains ISIM configurations
 
 - src/test  
   Contains the VHDL test benches
