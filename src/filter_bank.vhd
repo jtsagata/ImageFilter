@@ -40,7 +40,7 @@ COMPONENT filter_bank_choser
         M7 : OUT signed(MSIZE DOWNTO 0);
         M8 : OUT signed(MSIZE DOWNTO 0);
         M9 : OUT signed(MSIZE DOWNTO 0);
-        DIVIDER : OUT signed(MSIZE DOWNTO 0)
+        DIVIDER : OUT std_logic_vector(1 DOWNTO 0)
     );
 END COMPONENT;
  
@@ -75,11 +75,11 @@ END COMPONENT;
 
 COMPONENT zipper is
     Port (
-        Enable : IN STD_LOGIC;
-        CLK :    IN STD_LOGIC;
-        
-        INPUT  : IN  signed(MRESULT DOWNTO 0);
-        OUTPUT : OUT std_logic_vector(UBIT DOWNTO 0) --;
+        Enable  : IN STD_LOGIC;
+        CLK     : IN STD_LOGIC;
+        DIVIDER : IN std_logic_vector(1 DOWNTO 0);
+        INPUT   : IN signed(MRESULT DOWNTO 0);
+        OUTPUT  : OUT std_logic_vector(UBIT DOWNTO 0) --;
     
     );
 END COMPONENT;
@@ -95,6 +95,7 @@ signal M7_OUT: signed (MSIZE DOWNTO 0);
 signal M8_OUT: signed (MSIZE DOWNTO 0); 
 signal M9_OUT: signed (MSIZE DOWNTO 0); 
 signal M_OUT:  signed (MRESULT DOWNTO 0);
+signal DIVIDER : std_logic_vector(1 DOWNTO 0);
  
 BEGIN
 
@@ -112,7 +113,7 @@ BEGIN
         M7 => M7_OUT, 
         M8 => M8_OUT, 
         M9 => M9_OUT, 
-        DIVIDER => OPEN
+        DIVIDER => DIVIDER
     ); 
 
     Inst_multiplier: mult_adder PORT MAP(
@@ -142,6 +143,7 @@ BEGIN
     Inst_zipper: zipper PORT MAP(
         Enable => Enable,
         CLK => CLK,
+		DIVIDER => DIVIDER,
         INPUT => M_OUT,
         OUTPUT => SUM
     );

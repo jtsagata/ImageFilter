@@ -10,12 +10,13 @@
             <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
+            <top_module name="std_logic_textio" />
             <top_module name="std_logic_unsigned" />
             <top_module name="textio" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/filter_top_tb/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -38,19 +39,6 @@
       <obj_property name="ObjectShortName">dout[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/filter_top_tb/counter" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">counter[8:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/filter_top_tb/f_start" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">f_start</obj_property>
-      <obj_property name="ObjectShortName">f_start</obj_property>
-   </wvobject>
-   <wvobject fp_name="/filter_top_tb/f_end" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">f_end</obj_property>
-      <obj_property name="ObjectShortName">f_end</obj_property>
-   </wvobject>
    <wvobject fp_name="/filter_top_tb/clock_en" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clock_en</obj_property>
       <obj_property name="ObjectShortName">clock_en</obj_property>
@@ -70,10 +58,6 @@
    <wvobject fp_name="/filter_top_tb/image_height" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">image_height</obj_property>
       <obj_property name="ObjectShortName">image_height</obj_property>
-   </wvobject>
-   <wvobject fp_name="/filter_top_tb/image_last_value" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">image_last_value</obj_property>
-      <obj_property name="ObjectShortName">image_last_value</obj_property>
    </wvobject>
    <wvobject fp_name="/filter_top_tb/i_width" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">i_width[7:0]</obj_property>

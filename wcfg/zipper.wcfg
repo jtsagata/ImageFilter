@@ -12,7 +12,11 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/zipper_tb/enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
    <wvobject fp_name="/zipper_tb/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -20,16 +24,16 @@
    <wvobject fp_name="/zipper_tb/input" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">input[12:0]</obj_property>
       <obj_property name="ObjectShortName">input[12:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zipper_tb/divider" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">divider[1:0]</obj_property>
+      <obj_property name="ObjectShortName">divider[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/zipper_tb/output" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">output[7:0]</obj_property>
       <obj_property name="ObjectShortName">output[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zipper_tb/enable" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">enable</obj_property>
-      <obj_property name="ObjectShortName">enable</obj_property>
    </wvobject>
    <wvobject fp_name="/zipper_tb/clock_en" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clock_en</obj_property>

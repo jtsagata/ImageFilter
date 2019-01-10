@@ -18,7 +18,7 @@ ENTITY filter_bank_choser IS
         M7 : OUT signed(MSIZE DOWNTO 0);
         M8 : OUT signed(MSIZE DOWNTO 0);
         M9 : OUT signed(MSIZE DOWNTO 0);
-        DIVIDER : OUT signed(MSIZE DOWNTO 0)--;
+        DIVIDER : OUT std_logic_vector(1 DOWNTO 0)--;
     );
 END filter_bank_choser;
 
@@ -43,12 +43,12 @@ BEGIN
                 M7 <= to_signed(0, M7'length);
                 M8 <= to_signed(0, M8'length);
                 M9 <= to_signed(0, M9'length);
-                DIVIDER <= to_signed(1, M9'length);
+                DIVIDER <= "00";
             WHEN "001" => 
                 -- SOBEL FILTER X
-                M1 <= to_signed(1, M1'length);
-                M2 <= to_signed(0, M2'length);
-                M3 <= to_signed(1, M3'length);
+                M1 <= to_signed(-1, M1'length);
+                M2 <= to_signed(0,  M2'length);
+                M3 <= to_signed(+1, M3'length);
                 --
                 M4 <= to_signed(-2, M4'length);
                 M5 <= to_signed(0,  M5'length);
@@ -56,8 +56,8 @@ BEGIN
                 --
                 M7 <= to_signed(-1, M7'length);
                 M8 <= to_signed(0,  M8'length);
-                M9 <= to_signed(-1, M9'length);
-                DIVIDER <= to_signed(1, M9'length);
+                M9 <= to_signed(+1, M9'length);
+                DIVIDER <= "00";
                 
             WHEN "010" => 
                 -- SOBEL FILTER Y
@@ -72,22 +72,24 @@ BEGIN
                 M7 <= to_signed(1, M7'length);
                 M8 <= to_signed(2, M8'length);
                 M9 <= to_signed(1, M9'length);
-                DIVIDER <= to_signed(1, M9'length);
+                DIVIDER <= "00";
 
             WHEN "011" => 
                 -- GAUSIAN FILTER
-                M1 <= to_signed(18, M1'length);
-                M2 <= to_signed(8,  M2'length);
-                M3 <= to_signed(16, M3'length);
+                M1 <= to_signed(1, M1'length);
+                M2 <= to_signed(2,  M2'length);
+                M3 <= to_signed(1, M3'length);
                 --
-                M4 <= to_signed(8, M4'length);
+                M4 <= to_signed(2, M4'length);
                 M5 <= to_signed(4, M5'length);
-                M6 <= to_signed(8, M6'length);
+                M6 <= to_signed(2, M6'length);
                 --
-                M7 <= to_signed(16, M7'length);
-                M8 <= to_signed(8, M8'length);
-                M9 <= to_signed(16, M9'length);
-                DIVIDER <= to_signed(1, M9'length);
+                M7 <= to_signed(1, M7'length);
+                M8 <= to_signed(2, M8'length);
+                M9 <= to_signed(1, M9'length);
+				-- Shift by 4
+                --DIVIDER <= to_signed(4, M9'length);
+				DIVIDER <= "01";
 
                 
             WHEN OTHERS => 
@@ -103,7 +105,9 @@ BEGIN
                 M7 <= to_signed(1, M7'length);
                 M8 <= to_signed(1, M8'length);
                 M9 <= to_signed(1, M9'length);
-                DIVIDER <= to_signed(8, M9'length);
+                -- Shift by 3
+				--DIVIDER <= to_signed(3, M9'length);
+				DIVIDER <= "10";
         END CASE;
     END PROCESS;
     
