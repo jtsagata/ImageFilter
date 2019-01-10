@@ -92,6 +92,12 @@ This is a complex module that do a lot of calculations
   <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/control_logic.png">
 </p>
 
+### Enabler
+This module enable the controller after some time
+<p align="center">
+  <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/enabler.png">
+</p>
+
 ## Directory stucture
 
 - src  
