@@ -186,7 +186,7 @@ BEGIN
 		write(OLine, STRING'("DIN"));
 		write(OLine, ht); write(OLine, STRING'("|"));
 		write(OLine, STRING'("  DOUT  "));
-		 write(OLine, STRING'("|"));
+		write(OLine, STRING'("|"));
 		write(OLine, STRING'(" R ")); 
 		write(OLine, STRING'("|"));
 		write(OLine, STRING'(" 2 ")); 

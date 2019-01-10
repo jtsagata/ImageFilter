@@ -10,7 +10,7 @@ entity fifo_buffer_3 is
            ENABLE : in  STD_LOGIC;
            DIN : in  STD_LOGIC_VECTOR (UBIT downto 0);
            
-		   DOUT : out  STD_LOGIC_VECTOR (UBIT downto 0);
+           DOUT : out  STD_LOGIC_VECTOR (UBIT downto 0);
            DA : out  STD_LOGIC_VECTOR (UBIT downto 0);
            DB : out  STD_LOGIC_VECTOR (UBIT downto 0);
            DC : out  STD_LOGIC_VECTOR (UBIT downto 0);
@@ -19,15 +19,14 @@ end fifo_buffer_3;
 
 architecture Behavioral of fifo_buffer_3 is
 signal delay1, delay2, delay3, delay4 : STD_LOGIC_VECTOR (UBIT downto 0);
-signal buffer1, buffer2, buffer3 : STD_LOGIC;
-signal buffer4, buffer5, buffer6 : STD_LOGIC;
+signal buffer1, buffer2, buffer3, buffer4 : STD_LOGIC;
 signal ready_signal : STD_LOGIC := '1';
 
 begin
 
-	--
-	-- Propagete numbers
-	-- 
+    --
+    -- Propagete numbers
+    -- 
     p1: process(CLK,RESET)
     begin
         if RESET = '1' then
@@ -42,17 +41,17 @@ begin
             end if;
         end if;
     end process;
-	 
+     
     -- Wire connections
     DOUT <= delay4;
     DA <= delay1;
     DB <= delay2;
     DC <= delay3;
-    READY <= buffer4;	 
+    READY <= buffer4;    
 
-	--
-	-- Get READY signal
-	-- 
+    --
+    -- Get READY signal
+    -- 
     p2: process(CLK,RESET)
     begin
         if RESET = '1' then
@@ -60,14 +59,12 @@ begin
             buffer3 <= '0';    buffer4 <= '0'; 
         elsif rising_edge(CLK) then
             if ENABLE = '1' then
-				buffer1 <= '1';
+                buffer1 <= '1';
                 buffer2 <= buffer1;
                 buffer3 <= buffer2;
                 buffer4 <= buffer3;
-				--buffer5 <= buffer4;
-				--buffer6 <= buffer5;
             end if;
         end if;
-    end process;	 
+    end process;     
 end Behavioral;
 

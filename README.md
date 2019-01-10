@@ -47,7 +47,7 @@
 </p>
 
 
-### fifo_buffer_3
+### Fifo_buffer_3
 
 <p align="center">
   <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/fifo_buffer_3_sim.png">

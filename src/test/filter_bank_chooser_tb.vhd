@@ -14,16 +14,17 @@ ARCHITECTURE behavior OF filter_bank_chooser_tb IS
     PORT(
         SW_A : IN  std_logic;
         SW_B : IN  std_logic;
-		M1 : OUT signed(MSIZE DOWNTO 0);
-		M2 : OUT signed(MSIZE DOWNTO 0);
-		M3 : OUT signed(MSIZE DOWNTO 0);
-		M4 : OUT signed(MSIZE DOWNTO 0);
-		M5 : OUT signed(MSIZE DOWNTO 0);
-		M6 : OUT signed(MSIZE DOWNTO 0);
-		M7 : OUT signed(MSIZE DOWNTO 0);
-		M8 : OUT signed(MSIZE DOWNTO 0);
-		M9 : OUT signed(MSIZE DOWNTO 0);
-		DIVIDER : OUT signed(MSIZE DOWNTO 0)--;
+		SW_C : IN  std_logic;
+        M1 : OUT signed(MSIZE DOWNTO 0);
+        M2 : OUT signed(MSIZE DOWNTO 0);
+        M3 : OUT signed(MSIZE DOWNTO 0);
+        M4 : OUT signed(MSIZE DOWNTO 0);
+        M5 : OUT signed(MSIZE DOWNTO 0);
+        M6 : OUT signed(MSIZE DOWNTO 0);
+        M7 : OUT signed(MSIZE DOWNTO 0);
+        M8 : OUT signed(MSIZE DOWNTO 0);
+        M9 : OUT signed(MSIZE DOWNTO 0);
+        DIVIDER : OUT signed(MSIZE DOWNTO 0)--;
         );
     END COMPONENT;
     
@@ -31,8 +32,9 @@ ARCHITECTURE behavior OF filter_bank_chooser_tb IS
    --Inputs
    signal SW_A : std_logic := '0';
    signal SW_B : std_logic := '0';
+   signal SW_C : std_logic := '0';
 
- 	--Outputs
+    --Outputs
    signal M1 : signed(MSIZE DOWNTO 0);
    signal M2 : signed(MSIZE DOWNTO 0);
    signal M3 : signed(MSIZE DOWNTO 0);
@@ -48,10 +50,11 @@ ARCHITECTURE behavior OF filter_bank_chooser_tb IS
  
 BEGIN
  
-	-- Instantiate the Unit Under Test (UUT)
+    -- Instantiate the Unit Under Test (UUT)
    uut: filter_bank_choser PORT MAP (
           SW_A => SW_A,
           SW_B => SW_B,
+		  SW_C => SW_C,
           M1 => M1,
           M2 => M2,
           M3 => M3,
@@ -67,25 +70,29 @@ BEGIN
  
    -- Stimulus process
    stim_proc: process
-   begin		
-	  -- There is no clock no worries!
+   begin        
+      -- There is no clock no worries!
       wait for clock_period*10;
-	  SW_A <= '0';
-	  SW_B <= '0';
+      SW_A <= '0';
+      SW_B <= '0';
+	  SW_C <= '0';
 
       wait for clock_period*10;
-	  SW_A <= '0';
-	  SW_B <= '1';
+      SW_A <= '0';
+      SW_B <= '0';
+	  SW_C <= '1';
 
       wait for clock_period*10;
-	  SW_A <= '1';
-	  SW_B <= '0';
+      SW_A <= '0';
+      SW_B <= '1';
+	  SW_C <= '0';
 
       wait for clock_period*10;
-	  SW_A <= '1';
-	  SW_B <= '1';
-		
-	
+      SW_A <= '1';
+      SW_B <= '0';
+	  SW_C <= '0';
+        
+    
       wait;
    end process;
 

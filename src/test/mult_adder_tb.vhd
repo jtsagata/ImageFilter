@@ -13,27 +13,27 @@ ARCHITECTURE behavior OF mult_adder_tb IS
  
     COMPONENT mult_adder
     PORT(
-		S1 : IN std_logic_vector(UBIT DOWNTO 0);
-		S2 : IN std_logic_vector(UBIT DOWNTO 0);
-		S3 : IN std_logic_vector(UBIT DOWNTO 0);
-		S4 : IN std_logic_vector(UBIT DOWNTO 0);
-		S5 : IN std_logic_vector(UBIT DOWNTO 0);
-		S6 : IN std_logic_vector(UBIT DOWNTO 0);
-		S7 : IN std_logic_vector(UBIT DOWNTO 0);
-		S8 : IN std_logic_vector(UBIT DOWNTO 0);
-		S9 : IN std_logic_vector(UBIT DOWNTO 0);
+        S1 : IN std_logic_vector(UBIT DOWNTO 0);
+        S2 : IN std_logic_vector(UBIT DOWNTO 0);
+        S3 : IN std_logic_vector(UBIT DOWNTO 0);
+        S4 : IN std_logic_vector(UBIT DOWNTO 0);
+        S5 : IN std_logic_vector(UBIT DOWNTO 0);
+        S6 : IN std_logic_vector(UBIT DOWNTO 0);
+        S7 : IN std_logic_vector(UBIT DOWNTO 0);
+        S8 : IN std_logic_vector(UBIT DOWNTO 0);
+        S9 : IN std_logic_vector(UBIT DOWNTO 0);
 
-		M1 : IN signed (MSIZE DOWNTO 0);
-		M2 : IN signed (MSIZE DOWNTO 0);
-		M3 : IN signed (MSIZE DOWNTO 0);
-		M4 : IN signed (MSIZE DOWNTO 0);
-		M5 : IN signed (MSIZE DOWNTO 0);
-		M6 : IN signed (MSIZE DOWNTO 0);
-		M7 : IN signed (MSIZE DOWNTO 0);
-		M8 : IN signed (MSIZE DOWNTO 0);
-		M9 : IN signed (MSIZE DOWNTO 0);
+        M1 : IN signed (MSIZE DOWNTO 0);
+        M2 : IN signed (MSIZE DOWNTO 0);
+        M3 : IN signed (MSIZE DOWNTO 0);
+        M4 : IN signed (MSIZE DOWNTO 0);
+        M5 : IN signed (MSIZE DOWNTO 0);
+        M6 : IN signed (MSIZE DOWNTO 0);
+        M7 : IN signed (MSIZE DOWNTO 0);
+        M8 : IN signed (MSIZE DOWNTO 0);
+        M9 : IN signed (MSIZE DOWNTO 0);
 
-		sum : OUT signed (MRESULT DOWNTO 0);
+        sum : OUT signed (MRESULT DOWNTO 0);
          Enable : IN  std_logic;
          CLK : IN  std_logic;
          Ready : OUT  std_logic
@@ -64,7 +64,7 @@ ARCHITECTURE behavior OF mult_adder_tb IS
    signal Enable : std_logic := '0';
    signal CLK : std_logic := '0';
 
- 	--Outputs
+    --Outputs
    signal sum : signed (MRESULT DOWNTO 0);
    signal Ready : std_logic;
 
@@ -74,7 +74,7 @@ ARCHITECTURE behavior OF mult_adder_tb IS
    
 BEGIN
  
-	-- Instantiate the Unit Under Test (UUT)
+    -- Instantiate the Unit Under Test (UUT)
    uut: mult_adder PORT MAP (
           S1 => S1,
           S2 => S2,
@@ -103,60 +103,60 @@ BEGIN
    -- Clock process definitions
    CLK_process :process
    begin
-		CLK <= '0';
-		wait for CLK_period/2;
-		CLK <= CLOCK_EN;
-		wait for CLK_period/2;
+        CLK <= '0';
+        wait for CLK_period/2;
+        CLK <= CLOCK_EN;
+        wait for CLK_period/2;
    end process;
  
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin        
       -- hold reset state for 100 ns.
-	  ENABLE <= '1';
-	  wait for 100 ns;
-	  
-	  -- Start simulation
-	  CLOCK_EN <= '1';
-	  
-	  -- Let's change a pixel
-	  wait until rising_edge(clk);
-	  S1 <= ( 0=>'1', others => '0');
+      ENABLE <= '1';
+      wait for 100 ns;
+      
+      -- Start simulation
+      CLOCK_EN <= '1';
+      
+      -- Let's change a pixel
+      wait until rising_edge(clk);
+      S1 <= ( 0=>'1', others => '0');
 
-	  -- Let's change one more pixel
-	  wait until rising_edge(clk);
-	  S2 <= ( 0=>'1', others => '0');
+      -- Let's change one more pixel
+      wait until rising_edge(clk);
+      S2 <= ( 0=>'1', others => '0');
 
-	  -- Let's change 3nd pixel
-	  wait until rising_edge(clk);
-	  S3 <= ( 0=>'1', others => '0');
+      -- Let's change 3nd pixel
+      wait until rising_edge(clk);
+      S3 <= ( 0=>'1', others => '0');
 
-	  -- Reset state
-	  wait until rising_edge(clk);
-	  S1 <= ( others => '0');
-	  S2 <= ( others => '0');
-	  S3 <= ( others => '0');
+      -- Reset state
+      wait until rising_edge(clk);
+      S1 <= ( others => '0');
+      S2 <= ( others => '0');
+      S3 <= ( others => '0');
 
-	  -- We feed 2 pixels more and a reset
-	  wait for CLK_period*(WAIT_MULT_ADDER - 3);
-	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(1, SUM'length) REPORT "In Correct Sum step 1" SEVERITY error;	
-		
-	  -- Test 2nd pixel change
-	  wait until rising_edge(clk);
-	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(2, SUM'length) REPORT "In Correct Sum step 2" SEVERITY error;	
-		
-	  -- Test 3nd pixel change
-	  wait until rising_edge(clk);
-	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(3, SUM'length) REPORT "In Correct Sum step 3" SEVERITY error;	
+      -- We feed 2 pixels more and a reset
+      wait for CLK_period*(WAIT_MULT_ADDER - 3);
+      wait for CLK_period/4;
+      ASSERT SUM = to_signed(1, SUM'length) REPORT "In Correct Sum step 1" SEVERITY error;  
+        
+      -- Test 2nd pixel change
+      wait until rising_edge(clk);
+      wait for CLK_period/4;
+      ASSERT SUM = to_signed(2, SUM'length) REPORT "In Correct Sum step 2" SEVERITY error;  
+        
+      -- Test 3nd pixel change
+      wait until rising_edge(clk);
+      wait for CLK_period/4;
+      ASSERT SUM = to_signed(3, SUM'length) REPORT "In Correct Sum step 3" SEVERITY error;  
 
-	  -- Test after reste
-	  wait until rising_edge(clk);
-	  wait for CLK_period/4;
-	  ASSERT SUM = to_signed(0, SUM'length) REPORT "In Correct Sum after reset" SEVERITY error;	
+      -- Test after reste
+      wait until rising_edge(clk);
+      wait for CLK_period/4;
+      ASSERT SUM = to_signed(0, SUM'length) REPORT "In Correct Sum after reset" SEVERITY error; 
 
       wait;
    end process;
