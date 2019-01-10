@@ -12,6 +12,8 @@ xilinxsim.ini
 # Ignore README toc files
 README.md.orig.*
 README.md.toc.*
+# Ignore lock files
+.~lock.*
 
 # Ignore ipcore files
 ipcore_dir/tmp/

@@ -13,12 +13,13 @@ entity filter_top is
 		SW_A : IN STD_LOGIC;
 		SW_B : IN STD_LOGIC;
 		DIN  : IN  STD_LOGIC_VECTOR (UBIT downto 0);
+		-- PIXEL OUT
 		DOUT : OUT  STD_LOGIC_VECTOR (UBIT downto 0);
-		-- FOR DEBUG
-		COUNTER : OUT std_logic_vector(PRG_FULL_CONST DOWNTO 0);
-		--
-		F_START : OUT  STD_LOGIC;
-		F_END : OUT  STD_LOGIC--;
+        -- Control Signals
+		READY    : OUT  STD_LOGIC;
+        DONE     : OUT  STD_LOGIC;
+		F2_START : OUT  STD_LOGIC;
+		FN_END   : OUT  STD_LOGIC--;
     );
 end filter_top;
 
@@ -84,16 +85,18 @@ architecture filter_top_i of filter_top is
 		CLK :    IN  STD_LOGIC;
         ENABLE : IN  STD_LOGIC;
         RESET :  IN std_logic;
+		-- Image Dimensions
 		I_WIDTH : IN STD_LOGIC_VECTOR (UBIT downto 0);
         I_HEIGH : IN STD_LOGIC_VECTOR (UBIT downto 0);
-        FILTER_IN  : IN  STD_LOGIC_VECTOR (UBIT downto 0);
 	    THRESHSIZE : OUT std_logic_vector(PRG_FULL_CONST DOWNTO 0);
-		DOUT :    OUT  STD_LOGIC_VECTOR (UBIT downto 0);
-        -- FOR DEBUG
-		COUNTER : OUT std_logic_vector(PRG_FULL_CONST DOWNTO 0);
-		--
-		F_START : OUT  STD_LOGIC;
-        F_END :   OUT  STD_LOGIC--;
+		-- Data in/out
+        DIN      : IN  STD_LOGIC_VECTOR (UBIT downto 0);		
+		DOUT     : OUT  STD_LOGIC_VECTOR (UBIT downto 0);
+        -- Control Signals
+		READY    : OUT  STD_LOGIC;
+        DONE     : OUT  STD_LOGIC;
+		F2_START : OUT  STD_LOGIC;
+		FN_END   : OUT  STD_LOGIC--;
 	);
 	end COMPONENT;
 
@@ -142,17 +145,17 @@ begin
 		RESET => RESET,
 		I_WIDTH => I_WIDTH,
 		I_HEIGH => I_HEIGH,
-		FILTER_IN => FILTER_OUT,
+		DIN => FILTER_OUT,
 		THRESHSIZE => THRESHSIZE,
 		DOUT => DOUT ,
-        -- FOR DEBUG
-		COUNTER  => COUNTER,
-		--
-		F_START => F_START,
-		F_END => F_END
+ 
+        -- Control Signals
+		READY    => READY,
+        DONE     => DONE,
+		F2_START => F2_START,
+		FN_END   => FN_END--;
 	);
 
-	-- DOUT <= FILTER_OUT;
 
 end filter_top_i;
 

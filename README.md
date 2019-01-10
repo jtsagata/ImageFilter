@@ -72,6 +72,25 @@ TODO: Use the coefficient sum from filter chooser to do division and implement g
 </p>
 
 
+### Zipper
+Module zipper takes the filter output and trim it down to the range 0...255. 
+
+TODO: Use the coefficient sum from filter chooser to do division and implement gaussian filter 
+
+<p align="center">
+  <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/zipper.png">
+</p>
+
+### Controller
+This module provides control signals as shown in the picture
+<p align="center">
+  <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/control_signals_test.png">
+</p>
+This is a complex module that do a lot of calculations
+<p align="center">
+  <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/control_logic.png">
+</p>
+
 ## Directory stucture
 
 - src  

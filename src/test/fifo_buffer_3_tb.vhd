@@ -154,7 +154,7 @@ BEGIN
 				COUNT <= (0=>'1', others => '0');
 				delay_print := '1';
 			END IF;
-			IF ( delay_print = '1' ) THEN
+			IF (delay_print = '1') AND (CLOCK_EN='1') THEN
 				write(OLine, string'("[RESET event]"));
 				writeline(debug_file, OLine);
 				delay_print := '0';

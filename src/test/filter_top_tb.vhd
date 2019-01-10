@@ -152,7 +152,7 @@ counter_process : PROCESS (CLK, RESET)
       count_unsigned := (others => '0');
     END IF;
 
-    IF (delay_print = '1') THEN
+    IF (delay_print = '1') AND (CLOCK_EN='1') THEN
       write(OLine, STRING'("[RESET event]"));
       writeline(debug_file, OLine);
       delay_print := '0';
