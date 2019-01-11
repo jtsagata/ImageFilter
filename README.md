@@ -9,6 +9,7 @@
          * [fifo_buffer_3](#fifo_buffer_3)
          * [Cache memory](#cache-memory)
          * [Controller](#controller)
+         * [Enabler](#enabler)
       * [Directory stucture](#directory-stucture)
 
 <!-- Added by: talos, at: 2019-01-06T02:56+01:00 -->
