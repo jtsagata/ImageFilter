@@ -6,8 +6,9 @@
          * [filter bank chooser](#filter-bank-chooser)
          * [Multiplier (with adder)](#multiplier-with-adder)
          * [Efficient adder](#efficient-adder)
-         * [fifo_buffer_3](#fifo_buffer_3)
+         * [Fifo_buffer_3](#fifo_buffer_3)
          * [Cache memory](#cache-memory)
+         * [Zipper](#zipper)
          * [Controller](#controller)
          * [Enabler](#enabler)
       * [Directory stucture](#directory-stucture)
@@ -67,21 +68,11 @@
 ### Zipper
 Module zipper takes the filter output and trim it down to the range 0...255. 
 
-TODO: Use the coefficient sum from filter chooser to do division and implement gaussian filter 
 
 <p align="center">
   <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/zipper.png">
 </p>
 
-
-### Zipper
-Module zipper takes the filter output and trim it down to the range 0...255. 
-
-TODO: Use the coefficient sum from filter chooser to do division and implement gaussian filter 
-
-<p align="center">
-  <img width="640" src="https://github.com/jtsagata/ImageFilter/blob/master/images/zipper.png">
-</p>
 
 ### Controller
 This module provides control signals as shown in the picture
